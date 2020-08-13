@@ -29,6 +29,9 @@ Window::Window (QWidget* parent) : QMainWindow (parent)
     /* Get DriverStation instance */
     ds = DriverStation::getInstance();
 
+    /* Get SocketHandler instance */
+    sh = SocketHandler::getInstance();
+
     /* Fill UI options */
     ui->Protocols->addItems (ds->protocols());
     ui->TeamStation->addItems (ds->stations());
@@ -81,8 +84,13 @@ Window::Window (QWidget* parent) : QMainWindow (parent)
     connect (ui->RobotIP, SIGNAL (textChanged (QString)),
              ds,            SLOT (setCustomRobotAddress (QString)));
 
+    /* Change the Socket Connection when user changes address */
+    connect(ui->ServerAddy, SIGNAL (textChanged (QString)),
+            sh,               SLOT (openSocket (QString)));
+
     /* Initialize the DS with the 2016 protocol */
     ds->setProtocol (DriverStation::Protocol2016);
+
 }
 
 /**

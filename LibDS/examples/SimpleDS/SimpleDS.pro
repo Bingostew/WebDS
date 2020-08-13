@@ -12,14 +12,18 @@ HEADERS += \
   $$PWD/src/Window.h \
   $$PWD/src/VirtualJoystick.h \
     src/Socket.h \
-    src/RemoteJoystick.h
+    src/RemoteJoystick.h \
+    src/Joystick.h \
+    src/SocketHandler.h
 
 SOURCES += \
   $$PWD/src/main.cpp \
   $$PWD/src/Window.cpp \
   $$PWD/src/VirtualJoystick.cpp \
     src/Socket.cpp \
-    src/RemoteJoystick.cpp
+    src/RemoteJoystick.cpp \
+    src/Joystick.cpp \
+    src/SocketHandler.cpp
 
 FORMS += \
   $$PWD/src/Window.ui

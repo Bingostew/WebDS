@@ -1,10 +1,11 @@
 #ifndef REMOTEJOYSTICK_H
 #define REMOTEJOYSTICK_H
 
-
 #include <QKeyEvent>
 
-class RemoteJoystick : public QObject
+#include "Joystick.h"
+
+class RemoteJoystick : public Joystick//QObject
 {
     Q_OBJECT
 

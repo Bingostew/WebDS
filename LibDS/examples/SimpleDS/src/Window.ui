@@ -20,12 +20,18 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="TabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
       </property>
       <widget class="QWidget" name="MainTab">
        <attribute name="title">
-        <string>Main</string>
+        <string>Robot</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -254,140 +260,106 @@
       </widget>
       <widget class="QWidget" name="JoysticksTab">
        <attribute name="title">
-        <string>Joysticks</string>
+        <string>Joystick</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
-         <widget class="QLabel" name="Joystick">
-          <property name="minimumSize">
-           <size>
-            <width>450</width>
-            <height>208</height>
-           </size>
+         <widget class="QGroupBox" name="JoyBox">
+          <property name="title">
+           <string>Configure Joysticks</string>
           </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resources/resources.qrc">:/pixmaps/joystick.png</pixmap>
-          </property>
-          <property name="scaledContents">
+          <property name="checkable">
            <bool>false</bool>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QTableWidget" name="Table">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustToContents</enum>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::NoEditTriggers</set>
-          </property>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>450</number>
-          </attribute>
-          <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>450</number>
-          </attribute>
-          <row>
-           <property name="text">
-            <string>Left Stick</string>
+          <widget class="QGroupBox" name="InputMode">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>30</y>
+             <width>441</width>
+             <height>61</height>
+            </rect>
            </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Right Stick</string>
+           <property name="title">
+            <string>Input Mode</string>
            </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>A, B, X, Y</string>
+           <widget class="QComboBox" name="comboBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>30</y>
+              <width>421</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Remote Joystick</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Local USB Joystick</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Local Keyboard Joystick Simulator</string>
+             </property>
+            </item>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>119</y>
+             <width>441</width>
+             <height>71</height>
+            </rect>
            </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Left Trigger</string>
+           <property name="title">
+            <string>Remote Input Configuration</string>
            </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Right Trigger</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Left Bumper</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Right Bumper</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>D-Pad</string>
-           </property>
-          </row>
-          <column>
-           <property name="text">
-            <string>Keyboard Assignment</string>
-           </property>
-          </column>
-          <item row="0" column="0">
-           <property name="text">
-            <string>W,A,S,D</string>
-           </property>
-          </item>
-          <item row="1" column="0">
-           <property name="text">
-            <string>I,J,K,L</string>
-           </property>
-          </item>
-          <item row="2" column="0">
-           <property name="text">
-            <string>0,1,2,3</string>
-           </property>
-          </item>
-          <item row="3" column="0">
-           <property name="text">
-            <string>Q &amp; E</string>
-           </property>
-          </item>
-          <item row="4" column="0">
-           <property name="text">
-            <string>U &amp; O</string>
-           </property>
-          </item>
-          <item row="5" column="0">
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item row="6" column="0">
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string>Arrows</string>
-           </property>
-          </item>
+           <widget class="QLineEdit" name="ServerAddy">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>40</y>
+              <width>271</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>ws://localhost:8080/ds</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="RobotIPLabel_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>40</y>
+              <width>193</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Remote Server Address</string>
+            </property>
+           </widget>
+           <zorder>RobotIPLabel_2</zorder>
+           <zorder>ServerAddy</zorder>
+          </widget>
          </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="NetConsoleTab">
        <attribute name="title">
-        <string>NetConsole</string>
+        <string>Console</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -470,7 +442,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="StatusGroup"/>
   <buttongroup name="ModesGroup"/>
+  <buttongroup name="StatusGroup"/>
  </buttongroups>
 </ui>
